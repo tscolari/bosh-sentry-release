@@ -1,0 +1,9 @@
+---
+name: sentry
+templates: {}
+
+packages:
+  - sentry
+  - python
+
+properties: {}

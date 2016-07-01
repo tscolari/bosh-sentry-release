@@ -1,0 +1,9 @@
+---
+name: sentry
+
+dependencies:
+  - python
+  - postgres
+  - sentry-deps
+files:
+  - sentry/**/*

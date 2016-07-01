@@ -1,0 +1,7 @@
+---
+name: sentry-deps
+
+dependencies: []
+files:
+  - libjpeg/libjpeg8_8d.orig.tar.gz
+  - libffi/*
