@@ -1,0 +1,10 @@
+---
+name: build-tools
+
+dependencies: []
+
+files:
+  - build-tools/automake-1.15.tar.gz
+  - build-tools/autoconf-2.69.tar.gz
+  - build-tools/libtool-2.4.6.tar.gz
+  - build-tools/texinfo-6.1.tar.gz

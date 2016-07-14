@@ -3,11 +3,12 @@ set -e
 
 export PACKAGES_PATH="/var/vcap/packages"
 
+export LIBRARY_PATH="${LIBRARY_PATH}:${PACKAGES_PATH}/python/lib:${PACKAGES_PATH}/sentry-deps/lib"
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${PACKAGES_PATH}/python/lib/pkgconfig:${PACKAGES_PATH}/sentry-deps/lib/pkgconfig"
 export LD_LIBRARY_PATH="${PACKAGES_PATH}/python/lib:${PACKAGES_PATH}/sentry-deps/lib"
+export C_INCLUDE_PATH="${PACKAGES_PATH}/sentry-deps/include:${C_INCLUDE_PATH}"
 export PATH="${PACKAGES_PATH}/python/bin:${PACKAGES_PATH}/postgres/bin:${PACKAGES_PATH}/libjpeg/bin:$PATH"
 export PYTHONPATH="${BOSH_INSTALL_TARGET}:${PACKAGES_PATH}/python"
-
-sleep 100000
 
 (
   cd sentry

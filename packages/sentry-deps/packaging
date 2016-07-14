@@ -3,6 +3,7 @@ set -e
 
 mkdir -p ${BOSH_INSTALL_TARGET}/bin
 mkdir -p ${BOSH_INSTALL_TARGET}/man/man1
+export PATH=/var/vcap/packages/build-tools/bin:$PATH
 
 tar xvzf libjpeg/libjpeg8_8d.orig.tar.gz
 (
@@ -12,11 +13,18 @@ tar xvzf libjpeg/libjpeg8_8d.orig.tar.gz
   make install
 )
 
-
 tar xvzf libffi/v3.2.1.tar.gz
 (
   cd libffi-3.2.1
-  ./autogen.sh
+  ./autogen.sh --prefix=${BOSH_INSTALL_TARGET}
+  ./configure --prefix=${BOSH_INSTALL_TARGET}
+  make
+  make install
+)
+
+tar xvzf libtiff/tiff-4.0.6.tar.gz
+(
+  cd tiff-4.0.6
   ./configure --prefix=${BOSH_INSTALL_TARGET}
   make
   make install
