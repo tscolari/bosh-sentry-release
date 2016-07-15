@@ -10,6 +10,8 @@ export C_INCLUDE_PATH="${PACKAGES_PATH}/sentry-deps/include:${C_INCLUDE_PATH}"
 export PATH="${PACKAGES_PATH}/python/bin:${PACKAGES_PATH}/postgres/bin:${PACKAGES_PATH}/libjpeg/bin:$PATH"
 export PYTHONPATH="${BOSH_INSTALL_TARGET}:${PACKAGES_PATH}/python"
 
+sleep 1000
+
 (
   cd sentry
   python setup.py develop --install-dir=${BOSH_INSTALL_TARGET}

@@ -1,3 +1,6 @@
 [submodule "src/sentry"]
 	path = src/sentry
 	url = https://github.com/getsentry/sentry.git
+[submodule "src/bosh-build-tools-release"]
+	path = src/bosh-build-tools-release
+	url = https://github.com/tscolari/bosh-build-tools-release.git
